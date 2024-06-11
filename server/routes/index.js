@@ -1,38 +1,85 @@
 const express = require('express');
 const router = express.Router();
-import {Music, Playlist} from '../models/index'
+const {Music, Playlist} = require('../models/index');
+const {User} = require("../models");
 
 /* GET home page. */
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     res.render('index', {title: 'Express'});
 });
 
 router.get('/music', async (req, res) => {
-    const {page = 1, pageSize = 10, language} = req.query
-    const query = {}
-    if (language) {
-        query.language = language
+    try {
+        const {page = 1, pageSize = 10, language, type} = req.query;
+        const query = {};
+
+        if (language) query.language = language;
+        if (type) query.type = type;
+
+        const music = await Music.find(query)
+            .skip((page - 1) * pageSize)
+            .limit(parseInt(pageSize))
+            .populate('artist')
+            .populate('language');
+
+        res.status(200).send({code: 200, music});
+    } catch (error) {
+        res.status(500).send({code: 500, msg: 'Internal Server Error', error: error.message});
     }
-
-    let music = await Music.find(query)
-        .skip((page - 1) * 10)
-        .limit(pageSize)
-        .populate('Artist')
-        .populate('Language')
-
-    res.send({
-        code: 200,
-        music
-    })
 });
 
 router.get('/playlist', async (req, res) => {
-    const {page = 1, pageSize = 10} = req.query
-    const query = {}
-    let playlist = await Playlist.find(query).skip((page - 1) * 10).limit(pageSize)
-    res.send({
-        code: 200,
-        playlist
-    })
+    try {
+        const {page = 1, pageSize = 10, type} = req.query;
+        const query = {};
+
+        if (type) query.type = type;
+
+        const playlist = await Playlist.find(query)
+            .skip((page - 1) * pageSize)
+            .limit(parseInt(pageSize));
+
+        res.status(200).send({code: 200, playlist});
+    } catch (error) {
+        res.status(500).send({code: 500, msg: 'Internal Server Error', error: error.message});
+    }
 });
+
+router.post('/add_playlist', async (req, res) => {
+    try {
+        const playlist = await Playlist.create(req.body);
+        res.status(200).send({code: 200, msg: 'Playlist added successfully', playlist});
+    } catch (error) {
+        res.status(500).send({code: 500, msg: 'Failed to add playlist', error: error.message});
+    }
+});
+
+router.post('/playlist_add_music', async (req, res) => {
+    try {
+        const {_id, musics} = req.body;
+        const result = await Playlist.updateOne({_id}, {$addToSet: {musics: {$each: musics}}});
+
+        if (result.nModified > 0) {
+            res.status(200).send({code: 200, msg: 'Music added to playlist successfully'});
+        } else {
+            res.status(404).send({code: 404, msg: 'Playlist not found or no music added'});
+        }
+    } catch (error) {
+        res.status(500).send({code: 500, msg: 'Failed to add music to playlist', error: error.message});
+    }
+});
+
+router.get('/user_info', async (req, res) => {
+    try {
+        const user = await User.findById(req.query._id).populate('likes').populate('favorite').populate('define');
+        if (user) {
+            res.status(200).send({code: 200, user});
+        } else {
+            res.status(404).send({code: 404, msg: 'User not found'});
+        }
+    } catch (error) {
+        res.status(500).send({code: 500, msg: 'Internal Server Error', error: error.message});
+    }
+});
+
 module.exports = router;

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="BD@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.52">
+    <root id="1">
+      <ServerVersion>5.0.8</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="admin"/>
+    <schema id="3" parent="1" name="config"/>
+    <schema id="4" parent="1" name="db2309"/>
+    <schema id="5" parent="1" name="db410"/>
+    <schema id="6" parent="1" name="db411"/>
+    <schema id="7" parent="1" name="db413"/>
+    <schema id="8" parent="1" name="db419"/>
+    <schema id="9" parent="1" name="db_90"/>
+    <schema id="10" parent="1" name="exam2"/>
+    <schema id="11" parent="1" name="local"/>
+    <schema id="12" parent="1" name="roxy"/>
+    <schema id="13" parent="1" name="roxy2"/>
+    <schema id="14" parent="1" name="test">
+      <LastIntrospectionLocalTimestamp>2024-06-11.11:09:48</LastIntrospectionLocalTimestamp>
+    </schema>
+    <table id="15" parent="14" name="article"/>
+    <table id="16" parent="14" name="collect"/>
+    <table id="17" parent="14" name="content"/>
+    <table id="18" parent="14" name="data"/>
+    <table id="19" parent="14" name="side1"/>
+    <table id="20" parent="14" name="side2"/>
+    <table id="21" parent="14" name="side3"/>
+    <table id="22" parent="14" name="user"/>
+    <column id="23" parent="16" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="24" parent="16" name="title">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="25" parent="16" name="__v">
+      <DasType>Int32|4s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="26" parent="16" name="user">
+      <DasType>ObjectId|12s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="27" parent="18" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="28" parent="18" name="__v">
+      <DasType>Int32|4s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="29" parent="18" name="name">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="30" parent="18" name="phone">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="31" parent="18" name="state">
+      <DasType>Boolean|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="32" parent="18" name="address">
+      <DasType>String|12s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="33" parent="18" name="code">
+      <DasType>String|12s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="34" parent="18" name="default">
+      <DasType>Boolean|12s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="35" parent="18" name="deport">
+      <DasType>String|12s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="36" parent="18" name="lock">
+      <DasType>Boolean|12s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="37" parent="19" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="38" parent="19" name="name">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="39" parent="20" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="40" parent="20" name="__v">
+      <DasType>Int32|4s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="41" parent="20" name="name">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="42" parent="20" name="parent">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="43" parent="21" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="44" parent="21" name="__v">
+      <DasType>Int32|4s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="45" parent="21" name="name">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="46" parent="21" name="parent">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="47" parent="22" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="48" parent="22" name="name">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="49" parent="22" name="pwd">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+  </database-model>
+</dataSource>

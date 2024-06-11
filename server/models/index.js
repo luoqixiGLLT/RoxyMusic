@@ -30,7 +30,27 @@ const musicSchema = new mongoose.Schema({
     audio: {
         type: String,
         required: true
-    }
+    },
+    lyric: {
+        type: String,
+        required: true
+    },
+    like: {
+        type: Number,
+        default: 0
+    },
+    play: {
+        type: Number,
+        default: 0
+    },
+    comment: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+    }],
+    share: {
+        type: Number,
+        default: 0
+    },
 })
 const artistSchema = new mongoose.Schema({
     name: {
@@ -53,7 +73,6 @@ const userSchema = new mongoose.Schema({
     },
     avatar: {
         type: String,
-        required: true
     },
     likes: [{
         type: mongoose.Schema.Types.ObjectId,
