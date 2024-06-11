@@ -8,12 +8,18 @@ router.get('/', function (req, res) {
 });
 
 router.get('/music', async (req, res) => {
-    const {page = 1, pageSize = 10, language} = req.body
+    const {page = 1, pageSize = 10, language} = req.query
     const query = {}
     if (language) {
         query.language = language
     }
-    let music = await Music.find(query).skip((page - 1) * 10).limit(pageSize)
+
+    let music = await Music.find(query)
+        .skip((page - 1) * 10)
+        .limit(pageSize)
+        .populate('Artist')
+        .populate('Language')
+
     res.send({
         code: 200,
         music
@@ -21,7 +27,7 @@ router.get('/music', async (req, res) => {
 });
 
 router.get('/playlist', async (req, res) => {
-    const {page = 1, pageSize = 10} = req.body
+    const {page = 1, pageSize = 10} = req.query
     const query = {}
     let playlist = await Playlist.find(query).skip((page - 1) * 10).limit(pageSize)
     res.send({
