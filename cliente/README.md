@@ -1,8 +1,9 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+src目录：  
+    App.jsx 主页面 用于存放路由  
+    http.js 封装axios，发起请求用   
+    index.css 样式，使用了tailwindCSS，可以不用动   
+    main.jsx 主应用，不用动
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+tailwindCSS官网：https://tailwindcss.com/ 或去看视频了解如何使用
