@@ -19,7 +19,8 @@ const musicSchema = new mongoose.Schema({
         required: true,
     },
     language: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Language',
         required: true
     },
     cover: {
@@ -87,16 +88,38 @@ const playlistSchema = new mongoose.Schema({
     creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    },
+    type: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Types',
+        required: true
     }
 })
+const types = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+})
+const language = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+})
+
 const Music = mongoose.model('Music', musicSchema, 'music')
 const Playlist = mongoose.model('Playlist', playlistSchema, 'playlist')
 const Artist = mongoose.model('Artist', artistSchema, 'artist')
 const User = mongoose.model('User', userSchema, 'user')
+const Types = mongoose.model('Types', types, 'types')
+const Language = mongoose.model('Language', language, 'language')
 
 module.exports = {
     Music,
     Playlist,
     User,
     Artist,
+    Types,
+    Language,
 }
