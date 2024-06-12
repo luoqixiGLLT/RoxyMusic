@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="BD@localhost" uuid="a52ad79f-0143-476f-b421-e5bd80dca698">
+    <data-source source="LOCAL" name="Roxy" uuid="6194ce62-7fc9-4270-a335-362028a031cc">
       <driver-ref>mongo</driver-ref>
       <synchronize>true</synchronize>
+      <remarks>远程服务器</remarks>
       <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
-      <jdbc-url>mongodb://localhost:27017/BD</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="@localhost" uuid="c4c172d8-f2b6-4414-b026-21b9b9a94b72">
-      <driver-ref>mongo</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
-      <jdbc-url>mongodb://localhost:27017</jdbc-url>
+      <jdbc-url>mongodb://Roxy:27017</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

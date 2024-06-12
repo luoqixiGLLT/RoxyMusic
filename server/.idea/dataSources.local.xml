@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="PY-241.14494.241">
-    <data-source name="BD@localhost" uuid="a52ad79f-0143-476f-b421-e5bd80dca698">
+    <data-source name="Roxy" uuid="6194ce62-7fc9-4270-a335-362028a031cc">
       <database-info product="Mongo DB" version="5.0.8" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.18" dbms="MONGO" exact-version="5.0.8" exact-driver-version="1.18" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema">
-            <name qname="@" />
-            <name qname="test" />
-          </node>
-        </introspection-scope>
-      </schema-mapping>
-    </data-source>
-    <data-source name="@localhost" uuid="c4c172d8-f2b6-4414-b026-21b9b9a94b72">
-      <database-info product="Mongo DB" version="5.0.8" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.18" dbms="MONGO" exact-version="5.0.8" exact-driver-version="1.18" />
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <secret-storage>master_key</secret-storage>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="schema" qname="BD" />
+          <node kind="schema" qname="@" />
         </introspection-scope>
       </schema-mapping>
     </data-source>

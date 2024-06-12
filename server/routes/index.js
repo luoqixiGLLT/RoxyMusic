@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {Music, Playlist} = require('../models/index');
 const {User} = require("../models");
+const {Artist} = require("../models/index.js");
 
 /* GET home page. */
 router.get('/', (req, res) => {
@@ -10,21 +11,27 @@ router.get('/', (req, res) => {
 
 router.get('/music', async (req, res) => {
     try {
-        const {page = 1, pageSize = 10, language, type} = req.query;
-        const query = {};
+        const {page = 1, pageSize = 10, language, artist} = req.query;
 
-        if (language) query.language = language;
-        if (type) query.type = type;
+        let query = {};
+        if (language) {
+            query.language = language;
+        }
+        if (artist) {
+            query.artist = {$regex: new RegExp(artist, 'i')};
+        }
 
+        console.log(query);
         const music = await Music.find(query)
-            .skip((page - 1) * pageSize)
-            .limit(parseInt(pageSize))
+            .skip((parseInt(page, 10) - 1) * parseInt(pageSize, 10))
+            .limit(parseInt(pageSize, 10))
             .populate('artist')
             .populate('language');
 
+
         res.status(200).send({code: 200, music});
     } catch (error) {
-        res.status(500).send({code: 500, msg: 'Internal Server Error', error: error.message});
+        res.status(500).send({code: 500, msg: '服务器错误', error: error.message});
     }
 });
 
@@ -81,5 +88,7 @@ router.get('/user_info', async (req, res) => {
         res.status(500).send({code: 500, msg: 'Internal Server Error', error: error.message});
     }
 });
+
+
 
 module.exports = router;
