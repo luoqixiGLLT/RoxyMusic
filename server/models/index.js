@@ -155,6 +155,5 @@ module.exports = {
     Playlist,
     User,
     Artist,
-    Types,
     Language,
 }
