@@ -41,7 +41,7 @@ router.post('/image', upload.single('image'), (req, res) => {
 
     // 使用环境变量配置基础URL
     const imageUrl = `${process.env.BASE_URL}/public/imgs/${req.file.filename}`;
-    res.status(200).send({ code: 200, msg: 'File uploaded successfully', url: imageUrl });
+    res.status(200).send({ code: 200, msg: '上传成功', url: imageUrl });
 });
 
 // 错误处理中间件，捕获multer的错误
