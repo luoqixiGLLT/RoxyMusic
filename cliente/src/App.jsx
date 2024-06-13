@@ -1,6 +1,5 @@
 import {Fragment} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import MyAudio from "./MyAudio.jsx";
 
 function App() {
     return (
