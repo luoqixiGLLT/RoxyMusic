@@ -6,7 +6,7 @@ function App() {
         <Fragment>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/audio' element={<MyAudio/>}/>
+                {/*    路由存放处 */}
                 </Routes>
             </BrowserRouter>
         </Fragment>
