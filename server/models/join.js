@@ -1,11 +1,11 @@
-// import mongoose from "mongoose";
 const mongoose = require('mongoose');
+// import mongoose from "mongoose";
 
-mongoose.connect('mongodb://Roxy:27017/BD').then(e => {
-    console.log('连接成功: http://localhost:3001')
+mongoose.connect('mongodb+srv://Roxy:1227@cluster0.0jtxmdi.mongodb.net/BD?retryWrites=true&w=majority&appName=Cluster0').then(() => {
+    console.log('连接成功')
 }).catch(e => {
-    console.log(e)
+    console.log('连接失败:', e)
 })
 
-// export default mongoose
 module.exports = mongoose
+// export default mongoose
