@@ -4,6 +4,7 @@ import {Outlet, useNavigate} from "react-router-dom";
 import {TabBar} from "antd-mobile";
 import {PlayOutline, UserOutline} from "antd-mobile-icons";
 import {HomeOutlined} from "@ant-design/icons";
+import test from './static/test2.jpg'
 
 const tabs = [
     {
@@ -32,7 +33,7 @@ const Index = () => {
             <div className={'w-full h-[5%]'}>
                 <TabBar onChange={onChange}>
                     {tabs.map(item => (
-                        <TabBar.Item key={item.key} icon={item.icon}/>
+                        <TabBar.Item className={'drop-shadow-lg'} key={item.key} icon={item.icon}/>
                     ))}
                 </TabBar>
             </div>

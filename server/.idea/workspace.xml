@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68f16d8e-dd9f-40ad-8b34-cc5a5f758fd4" name="更改" comment="api修改1">
-      <change beforePath="$PROJECT_DIR$/../cliente/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../cliente/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cliente/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../cliente/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cliente/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../cliente/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cliente/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../cliente/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cliente/src/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../cliente/src/Index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cliente/src/Index/Play.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../cliente/src/Index/Play.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +158,7 @@
       <workItem from="1718179927982" duration="3963000" />
       <workItem from="1718192217359" duration="1474000" />
       <workItem from="1718212300123" duration="1227000" />
-      <workItem from="1718259154839" duration="6291000" />
+      <workItem from="1718259154839" duration="7193000" />
     </task>
     <task id="LOCAL-00001" summary="api修改1">
       <option name="closed" value="true" />
