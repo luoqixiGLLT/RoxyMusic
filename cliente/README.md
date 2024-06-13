@@ -24,7 +24,10 @@ src
 |
 └───store 全局状态文件夹 状态请存放在这里
 ```
-
+安装依赖
+```shell
+npm i
+```
 启动项目
 ```shell
 npm run dev
