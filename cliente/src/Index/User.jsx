@@ -3,7 +3,12 @@ import React from 'react';
 const User = () => {
     return (
         <div>
-            用户页
+            <div>
+                <div>
+                    <img src="../../1.jpeg" alt=""></img>
+                    <p>小音波</p>
+                </div>
+            </div>
         </div>
     );
 };
