@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+.User {
+    background: linear-gradient(0deg, #163F44, black);
+    color: white;
+    width: 100%;
+    height: 100vh;
+}
+
 .User_p {
     font-size: 24px;
     font-weight: bold;
@@ -25,8 +32,8 @@
 
 .User_body {
     width: 90%;
-    margin: 70px auto;
-
+    padding-top: 70px;
+    margin: 0 auto;
 }
 
 .User_text div {
@@ -47,9 +54,11 @@
 .User_top div {
     width: 20px;
 }
-.User_one{
+
+.User_one {
     background-image: linear-gradient(to bottom, #277f72, #217166, #1b625b, #16544f, #124743, #133e3a, #133531, #122d29, #132622, #131f1b, #121816, #0f1110);
 }
+
 .User_cente {
     margin: 10px 0;
     width: 100%;
@@ -65,7 +74,85 @@
     line-height: 50px;
     color: white;
 }
-.User_cente_two{
+
+.User_cente_two {
     color: rgb(196, 193, 193);
     margin-top: 15px;
+}
+
+.Music_div {
+    width: 100%;
+    display: flex;
+    color: white;
+    margin-top: 10px;
+
+}
+
+.Music_right {
+    width: 50%;
+    height: 130px;
+    background: rgb(47, 41, 50);
+    border-radius: 15px;
+}
+
+.Music_right img {
+    width: 50%;
+    margin: 10px;
+    height: 80px;
+}
+
+.Music_right div {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Music_left {
+    margin-left: 3%;
+    width: 47%;
+    height: 130px;
+}
+
+.Music_left_one {
+    margin-top: 3%;
+    padding-right: 10px;
+    width: 100%;
+    border-radius: 10px;
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    height: 40%;
+    margin-bottom: 10%;
+    background: rgb(37, 44, 42);
+}
+
+.Music_left_one div {
+    display: flex;
+}
+
+.Music_left_two div {
+    display: flex;
+}
+
+.Musice_biao {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.Music_left_two {
+    border-radius: 10px;
+    line-height: 50px;
+    justify-content: space-between;
+    margin-top: 10%;
+    width: 100%;
+    height: 40%;
+    background: rgb(28, 37, 54);
+}
+
+.adm-capsule-tabs-tab {
+    background: rgb(25, 29, 32);
+}
+
+.adm-capsule-tabs-tab.adm-capsule-tabs-tab-active {
+    background: rgb(54, 255, 238);
 }

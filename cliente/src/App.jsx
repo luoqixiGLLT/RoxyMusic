@@ -22,6 +22,11 @@ import Liu from './Index/Home/Liu.jsx';
 import Tui from './Index/Home/Tui.jsx';
 //分类
 import Fenlei from "./Index/Fenlei.jsx";
+//好友子路由
+import One from "./Index/User/Friends/One.jsx";
+import Two from "./Index/User/Friends/Two.jsx";
+import Thre from "./Index/User/Friends/Thre.jsx";
+import Four from "./Index/User/Friends/Four.jsx";
 function App() {
     return (
         <Fragment>
@@ -37,7 +42,12 @@ function App() {
                         <Route path='play' element={<Play />} />
                         <Route path='user' element={<User />}  >
                             <Route path="/user/Music" element={<Music />} />,
-                            <Route path="/user/Friends" element={<Friends />} />,
+                            <Route path="/user/Friends" element={<Friends />}>
+                                <Route path="/user/Friends/one" element={<One />} />
+                                <Route path="/user/Friends/two" element={<Two />} />
+                                <Route path="/user/Friends/thre" element={<Thre />} />
+                                <Route path="/user/Friends/four" element={<Four />} />
+                            </Route>,
                             <Route path="/user/Brother" element={<Brother />} />,
                             <Route path="/user/Talks" element={<Talks />} />,
                             <Route path="/user/Author" element={<Author />} />,

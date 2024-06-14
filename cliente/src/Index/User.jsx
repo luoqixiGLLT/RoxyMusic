@@ -6,7 +6,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 const User = () => {
     const nai = useNavigate()
     return (
-        <div>
+        <div className='User'>
             <div className='User_body'>
                 <div className='User_top'>
                     <MailOutline fontSize={28} />
@@ -38,10 +38,6 @@ const User = () => {
                     <Tabs.Tab title='话题' key='/user/Talks'>
                     </Tabs.Tab>
                     <Tabs.Tab title='作者' key='/user/Author'>
-                    </Tabs.Tab>
-                    <Tabs.Tab title='喜欢' key='/user/Like'>
-                    </Tabs.Tab>
-                    <Tabs.Tab title='动态' key='/user/Trends'>
                     </Tabs.Tab>
                 </Tabs>
                 <Outlet></Outlet>
