@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.User_p {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #51d7b3, #ede323);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 4%;
+}
+
+.User_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%
+}
+
+.User_text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.User_body {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.User_text div {
+    display: flex;
+
+}
+.User_left{
+    margin-top: 5%;
+}
