@@ -3,8 +3,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Index from "./Index.jsx";
 import Login from "./Login.jsx";
 import Search from "./Search.jsx";
-import Home from "./Index/Home.jsx";
+
 import Play from "./Index/Play.jsx";
+//我的子路由
 import User from "./Index/User.jsx";
 import Music from "./Index/User/Music.jsx";
 import Friends from "./Index/User/Friends.jsx";
@@ -13,13 +14,26 @@ import Talks from "./Index/User/Talks.jsx";
 import Author from "./Index/User/Author.jsx";
 import Like from "./Index/User/Like.jsx";
 import Trends from "./Index/User/Trends.jsx";
+//首页子路由
+import Home from "./Index/Home.jsx";
+import Dan from "./Index/Home/Dan.jsx";
+import Hong from "./Index/Home/Hong.jsx";
+import Liu from './Index/Home/Liu.jsx';
+import Tui from './Index/Home/Tui.jsx';
+//分类
+import Fenlei from "./Index/Fenlei.jsx";
 function App() {
     return (
         <Fragment>
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Index />}>
-                        <Route path='home' element={<Home />} ></Route>
+                        <Route path='home' element={<Home />} >
+                            <Route path="/home/Dan" element={<Dan />} />,
+                            <Route path="/home/Hong" element={<Hong />} />,
+                            <Route path="/home/Liu" element={<Liu />} />,
+                            <Route path="/home/Tui" element={<Tui />} />,
+                        </Route>
                         <Route path='play' element={<Play />} />
                         <Route path='user' element={<User />}  >
                             <Route path="/user/Music" element={<Music />} />,
@@ -33,6 +47,7 @@ function App() {
                     </Route>
                     <Route path='/login' element={<Login />} />
                     <Route path='/search' element={<Search />} />
+                    <Route path='/fenlei' element={<Fenlei />} />
                 </Routes >
             </BrowserRouter >
         </Fragment >

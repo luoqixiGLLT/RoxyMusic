@@ -1,7 +1,7 @@
 .home-container{
-    background:linear-gradient(150deg,#163F44,black) ;
+    background:linear-gradient(0deg,#163F44,black) ;
     color: white;
-    height: 606px;
+    height: 100vh;
     width: 100%;
     
 }
@@ -9,22 +9,36 @@
     color: white;
     background-color: rgb(20, 45, 52);
     width: 70%;
-    height: 30px;
-    border-radius: 30px;
-    
+    height: 40px;
+    border-radius: 40px;
+    line-height: 40px;
     float: left;
 }
 .home-img{
     display: block;
     width: 30px;
     height: 30px;
-    margin-left: 20px;
+    margin-left: 8%;
     border-radius: 10px;
 }
 .home-top{
     width: 100%;
     display: flex;
     padding-top: 40px;
-    padding-left: 30px;
-    
+    padding-left: 15%;
+    margin-bottom: 10%;
 }
+.content {
+    height: 120px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    user-select: none;
+    
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 30px;
+  }
