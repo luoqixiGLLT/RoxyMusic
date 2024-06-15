@@ -16,6 +16,7 @@ import Author from "./Index/User/Author.jsx";
 import Like from "./Index/User/Like.jsx";
 import Trends from "./Index/User/Trends.jsx";
 import Bian from "./Index/bian.jsx";
+import Musiclist from "./Index/User/Musiclist.jsx";
 //首页子路由
 import Home from "./Index/Home.jsx";
 import Dan from "./Index/Home/Dan.jsx";
@@ -46,6 +47,7 @@ function App() {
                             <Route path="bian" element={<Bian />} />
                         <Route path='user' element={<User />}  >
                             <Route path="/user/Music" element={<Music />} />,
+                            <Route path="/user/Musiclist" element={<Musiclist />} />,
                             <Route path="/user/Friends" element={<Friends />}>
                                 <Route path="/user/Friends/one" element={<One />} />
                                 <Route path="/user/Friends/two" element={<Two />} />
