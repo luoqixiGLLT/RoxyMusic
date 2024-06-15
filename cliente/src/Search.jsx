@@ -36,7 +36,7 @@ export default function Search() {
   }
   const his=(item)=>{
     localStorage.setItem('name',JSON.stringify(item))
-    navigator('/sou')
+    navigator('/sou/dan')
   }
   return (
     <div className='Search_box'>
