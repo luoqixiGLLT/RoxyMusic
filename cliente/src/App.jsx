@@ -30,6 +30,8 @@ import One from "./Index/User/Friends/One.jsx";
 import Two from "./Index/User/Friends/Two.jsx";
 import Thre from "./Index/User/Friends/Thre.jsx";
 import Four from "./Index/User/Friends/Four.jsx";
+//聊天界面
+import Talk from "./Index/User/Friends/Talk.jsx";
 function App() {
     return (
         <Fragment>
@@ -64,6 +66,7 @@ function App() {
                     <Route path='/login' element={<Login />} />
                     <Route path='/search' element={<Search />} />
                     <Route path='/fenlei' element={<Fenlei />} />
+                    <Route path='/talk/:username' element={<Talk />} />
                 </Routes >
             </BrowserRouter >
         </Fragment >
