@@ -1,8 +1,50 @@
-.bian{
+.bian {
     background: linear-gradient(0deg, #163F44, black);
     color: white;
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     padding-left: 25px;
     padding-top: 55px;
+}
+
+.bian_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+}
+
+.bian_box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.bian_p4{
+    font-size: 20px;
+    margin-top: 10px;
+}
+.bian_left {
+    font-size: 20px;
+}
+.bian_p3{
+    display: flex;
+    margin-right: 20px;
+}
+.bian_right{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.bian_p1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -5px;
+    margin-left: 90px;
+    margin-bottom: 60px;
+}
+
+.bian_box1 {
+    display: flex;
+}
+
+.bian_p2 {
+    font-size: 20px;
 }
