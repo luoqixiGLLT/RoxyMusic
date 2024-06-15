@@ -1,7 +1,7 @@
 .home-container{
     background:linear-gradient(0deg,#163F44,black) ;
     color: white;
-    height: 100vh;
+    height: 115vh;
     width: 100%;
 }
 .home-inp{
@@ -40,4 +40,76 @@
     margin: auto;
     margin-top: 40px;
     border-radius: 30px;
+  }
+  .scroll-container {
+    width: 100%;
+    overflow-x: scroll; /* 允许横向滚动 */
+    white-space: nowrap; /* 使内容在同一行显示 */
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    /* background-color: #fff; */
+    
+    /* 隐藏滚动条的方法 */
+    scrollbar-width: none; /* 对Firefox有效 */
+    -ms-overflow-style: none; /* 对IE和Edge有效 */
+    margin-top: 5%;
+  }
+  
+  .scroll-container::-webkit-scrollbar { 
+    display: none; /* 对Webkit浏览器（Chrome, Safari）有效 */
+  }
+  
+  /* 滚动内容 */
+  .scroll-content {
+    display: inline-flex; /* 使子元素并排显示 */
+  }
+  
+  /* 每个项目 */
+  .item {
+    flex: 0 0 auto; /* 防止项目换行 */
+    width: 250px;
+    height: 200px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: black;
+    
+    /* border-radius: 5px; */
+    border-radius: 5px 35px 5px 5px;
+    background: linear-gradient(-160deg,rgb(255,179,170),rgb(254,242,162));
+  }
+  .items{
+    flex: 0 0 auto; /* 防止项目换行 */
+    width: 100px;
+    height: 200px;
+    margin: 0 10px;
+    background-color: #252525;
+    color: white;
+    border-radius: 150px;
+  }
+  .pai p{
+    margin-bottom: 5%;
+  }
+  .but{
+    width:40px;
+    height: 35px;
+    margin: auto;
+    background-color: aqua;
+    text-align: center;
+    color: black;
+    font-size: 28px;
+    margin-top: 20%;
+    line-height: 35px;
+    border-radius: 10px;
+  }
+  .item1{
+    flex: 0 0 auto; /* 防止项目换行 */
+    width: 231px;
+    height: 231px;
+    margin: 0 10px;
+
+    color: #CCC;
+    
+    /* border-radius: 5px; */
+    border-radius: 5px 5px 5px 5px;
+    /* background-image: url('../首页/歌单1.png'); */
   }
