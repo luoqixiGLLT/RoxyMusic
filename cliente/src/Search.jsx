@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './Search.css'
+import { useNavigate } from 'react-router-dom'
 import { SearchOutlined } from '@ant-design/icons'
 import { DeleteOutline,RedoOutline } from 'antd-mobile-icons'
 export default function Search() {
@@ -14,6 +15,7 @@ export default function Search() {
     {name:'暮色回响',new:0,hot:0},
     {name:'表白',new:0,hot:0},
   ]
+  const navigator = useNavigate()
   const [history,setHistory] = useState([])
   const [name,setName] = useState('')
   const en=(e)=>{
@@ -22,6 +24,7 @@ export default function Search() {
       let historys = [...history]
       historys.push(name)
       setHistory(historys)
+      navigator('/sou')
       console.log(historys);
     }
 
