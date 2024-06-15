@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './sou.css'
+import { Tabs } from 'antd-mobile'
 import { useNavigate } from 'react-router-dom'
 import { SearchOutlined } from '@ant-design/icons'
 export default function sou() {
-   const navigator = useNavigate()
-      const onto = ()=>{
-          navigator('/home')
-      }
+  const navigator = useNavigate()
+  const onto = () => {
+    navigator('/home')
+  }
   const list = [
     { name: '若月亮还没来', new: 0, hot: 1 },
     { name: '如果爱忘了', new: 0, hot: 0 },
@@ -54,6 +55,20 @@ export default function sou() {
         {lists.map(item => {
           return <p>{item.name}</p>
         })}
+      </div>
+      <div>
+        <Tabs defaultActiveKey='1' onChange={(e) => {
+          navigator(e)
+        }}>
+          <Tabs.Tab title='综合' key='/user/Music'>
+          </Tabs.Tab>
+          <Tabs.Tab title='单曲' key='/user/Friends'>
+          </Tabs.Tab>
+          <Tabs.Tab title='歌单' key='/user/Brother'>
+          </Tabs.Tab>
+          <Tabs.Tab title='歌手' key='/user/Talks'>
+          </Tabs.Tab>
+        </Tabs>
       </div>
     </div>
   )
