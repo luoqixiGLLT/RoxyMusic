@@ -101,3 +101,15 @@
     line-height: 35px;
     border-radius: 10px;
   }
+  .item1{
+    flex: 0 0 auto; /* 防止项目换行 */
+    width: 231px;
+    height: 231px;
+    margin: 0 10px;
+
+    color: #CCC;
+    
+    /* border-radius: 5px; */
+    border-radius: 5px 5px 5px 5px;
+    /* background-image: url('../首页/歌单1.png'); */
+  }
