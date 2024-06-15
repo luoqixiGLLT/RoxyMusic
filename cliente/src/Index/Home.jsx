@@ -25,9 +25,8 @@ const Home = () => {
                     </Tabs.Tab>
                     
             </Tabs>
-            
             </div>
-            
+            <div></div>
             <Outlet></Outlet>
             
         </div>
