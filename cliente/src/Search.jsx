@@ -25,6 +25,7 @@ export default function Search() {
       historys.push(name)
       setHistory(historys)
       navigator('/sou')
+      localStorage.setItem('name',JSON.stringify(name))
       console.log(historys);
     }
 
