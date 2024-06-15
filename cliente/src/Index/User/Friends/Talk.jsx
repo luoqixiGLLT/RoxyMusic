@@ -5,7 +5,7 @@ import { Card } from '@nutui/nutui-react'
 import { io } from 'socket.io-client';
 import http from "../../../http";
 import anime from "animejs"
-import { UnorderedListOutline, AddCircleOutline, EnvironmentOutline, FolderOutline } from 'antd-mobile-icons'
+import { UnorderedListOutline, AddCircleOutline, EnvironmentOutline, FolderOutline, PhoneFill } from 'antd-mobile-icons'
 import { Button, Popup } from 'antd-mobile'
 import { Input, message } from 'antd';
 const socket = io('http://localhost:5000');
@@ -91,23 +91,23 @@ export default function Talk() {
     }, [talk])
 
     useEffect(() => {
-        const animation = anime({
-            targets: '.rightUser',
-            scale: [
-                { value: .1, easing: 'easeOutSine', duration: 500 },
-                { value: 1, easing: 'easeInOutQuad', duration: 1200 }
-            ],
-            delay: anime.stagger(200, { grid: [14, 5], from: 'center' })
-        });
-        const animation2 = anime({
-            targets: '.leftUser',
-            scale: [
-                { value: .1, easing: 'easeOutSine', duration: 500 },
-                { value: 1, easing: 'easeInOutQuad', duration: 1200 }
-            ],
-            delay: anime.stagger(200, { grid: [14, 5], from: 'center' })
+        // const animation = anime({
+        //     targets: '.rightUser',
+        //     scale: [
+        //         { value: .1, easing: 'easeOutSine', duration: 500 },
+        //         { value: 1, easing: 'easeInOutQuad', duration: 1200 }
+        //     ],
+        //     delay: anime.stagger(200, { grid: [14, 5], from: 'center' })
+        // });
+        // const animation2 = anime({
+        //     targets: '.leftUser',
+        //     scale: [
+        //         { value: .1, easing: 'easeOutSine', duration: 500 },
+        //         { value: 1, easing: 'easeInOutQuad', duration: 1200 }
+        //     ],
+        //     delay: anime.stagger(200, { grid: [14, 5], from: 'center' })
 
-        });
+        // });
     }, [fz])
     return (
         <div className='bgTalk'>
@@ -176,13 +176,15 @@ export default function Talk() {
                             addMassage()
                         }
                     }} onChange={(e) => { setContent(e.target.value) }} />
-                    <Button className="buttons" color='warning' size="small"  onClick={() => { addMassage() }}>发送</Button>
+                    <Button color='warning' size="small" onClick={() => { addMassage() }}>发送</Button>
                 </div>
                 <div>
                     <ul className='ul'>
-                        <li className="li" onClick={() => { setVisible1(true) }}><p><UnorderedListOutline fontSize={28} /></p></li>
-                        <li className="li"><p><FolderOutline fontSize={28} /></p></li>
-                        <li className="li"><p><EnvironmentOutline fontSize={28} /></p></li>
+                        <li className="li" onClick={() => { setVisible1(true) }}><p><UnorderedListOutline style={{ marginTop: "10px" }} fontSize={28} /></p></li>
+                        <li className="li"><p><FolderOutline style={{ marginTop: "10px" }} fontSize={28} /></p></li>
+                        <li className="li"><p><EnvironmentOutline style={{ marginTop: "10px" }} fontSize={28} /></p></li>
+                        <li className="li"><p><PhoneFill style={{ marginTop: "10px" }} fontSize={28} />
+                        </p></li>
                     </ul>
                 </div>
                 <Popup

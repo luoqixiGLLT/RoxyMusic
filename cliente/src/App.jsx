@@ -17,6 +17,7 @@ import Like from "./Index/User/Like.jsx";
 import Trends from "./Index/User/Trends.jsx";
 import Bian from "./Index/bian.jsx";
 import Sou from "./Index/sou.jsx";
+import Sign from "./Index/Sign.jsx";
 //首页子路由
 import Home from "./Index/Home.jsx";
 import Dan from "./Index/Home/Dan.jsx";
@@ -67,6 +68,7 @@ function App() {
                     <Route path='/search' element={<Search />} />
                     <Route path='/fenlei' element={<Fenlei />} />
                     <Route path='/talk/:username' element={<Talk />} />
+                    <Route path='/sign/:username' element={<Sign />} />
                 </Routes >
             </BrowserRouter >
         </Fragment >
