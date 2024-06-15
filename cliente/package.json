@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
+    "@nutui/nutui-react": "^2.6.9",
     "antd": "^5.18.0",
     "antd-mobile": "^5.36.1",
     "antd-mobile-icons": "^0.3.0",
@@ -18,6 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
+    "socket.io-client": "^4.7.5",
     "valtio": "^1.13.2"
   },
   "devDependencies": {

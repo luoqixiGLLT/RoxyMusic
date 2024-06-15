@@ -135,7 +135,28 @@ const language = new mongoose.Schema({
         required: true
     },
 })
+let newsSchema = new mongoose.Schema({
+    senderId: String,
+    senderId2: String,
+    message: String,
+    product: {
+        ref: "fz",
+        type: mongoose.Types.ObjectId
+    },
 
+})
+let userSchemas = new mongoose.Schema({
+    user: String,
+    pwd: String,
+    phone: String,
+    userName: String,
+    img: String,
+    fllower: [mongoose.Types.ObjectId],
+    fans: [mongoose.Types.ObjectId],
+    news: [mongoose.Types.ObjectId]
+})
+let userDB = mongoose.model("user", userSchemas, "user")
+let newsDB = mongoose.model("news", newsSchema, "news")
 const Music = mongoose.model('Music', musicSchema, 'music')
 const Playlist = mongoose.model('Playlist', playlistSchema, 'playlist')
 const Artist = mongoose.model('Artist', artistSchema, 'artist')
@@ -156,4 +177,6 @@ module.exports = {
     User,
     Artist,
     Language,
+    newsDB,
+    userDB
 }
