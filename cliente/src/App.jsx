@@ -16,6 +16,7 @@ import Author from "./Index/User/Author.jsx";
 import Like from "./Index/User/Like.jsx";
 import Trends from "./Index/User/Trends.jsx";
 import Bian from "./Index/bian.jsx";
+import Sou from "./Index/sou.jsx";
 //首页子路由
 import Home from "./Index/Home.jsx";
 import Dan from "./Index/Home/Dan.jsx";
@@ -29,6 +30,8 @@ import One from "./Index/User/Friends/One.jsx";
 import Two from "./Index/User/Friends/Two.jsx";
 import Thre from "./Index/User/Friends/Thre.jsx";
 import Four from "./Index/User/Friends/Four.jsx";
+//聊天界面
+import Talk from "./Index/User/Friends/Talk.jsx";
 function App() {
     return (
         <Fragment>
@@ -44,6 +47,7 @@ function App() {
                         <Route path='play' element={<Play />} />
                             <Route path="zhu" element={<Zhu />} />
                             <Route path="bian" element={<Bian />} />
+                            <Route path="sou" element={<Sou />} />
                         <Route path='user' element={<User />}  >
                             <Route path="/user/Music" element={<Music />} />,
                             <Route path="/user/Friends" element={<Friends />}>
@@ -62,6 +66,7 @@ function App() {
                     <Route path='/login' element={<Login />} />
                     <Route path='/search' element={<Search />} />
                     <Route path='/fenlei' element={<Fenlei />} />
+                    <Route path='/talk/:username' element={<Talk />} />
                 </Routes >
             </BrowserRouter >
         </Fragment >
