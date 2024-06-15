@@ -162,7 +162,17 @@ const Playlist = mongoose.model('Playlist', playlistSchema, 'playlist')
 const Artist = mongoose.model('Artist', artistSchema, 'artist')
 const User = mongoose.model('User', userSchema, 'user')
 const Language = mongoose.model('Language', language, 'language')
+let FzSchema = new mongoose.Schema({
+    src: String,
+    title: String,
+    price: String,
+    vipPrice: String,
+    shopDescription: String,
+    delivery: String,
+    shopName: String,
+})
 
+let fzDB = mongoose.model("fz", FzSchema, "fz")
 // export {
 //     Music,
 //     Playlist,
@@ -178,5 +188,6 @@ module.exports = {
     Artist,
     Language,
     newsDB,
-    userDB
+    userDB,
+    fzDB
 }

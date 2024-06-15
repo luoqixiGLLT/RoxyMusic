@@ -184,6 +184,45 @@
     font-size: 18px;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 聊天的消息 User组件*/
+.Img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.useBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.userbigbox {
+    box-sizing: content-box;
+    padding: 5px 10px;
+    border-bottom: 1px solid #eee;
+    line-height: 25px;
+}
+
+.ss {
+    width: calc(100vw - 100px)
+}
+
+.titleText {
+    font-size: 16px;
+    color: #575656
+}
+
+.titleName {
+    font-size: 18px;
+}
+
 /* 聊天框的设置Home组件 */
 .userShow {
     background: white;
@@ -192,12 +231,29 @@
     border-radius: 10px;
 }
 
-.Img {
-    width: 40px;
+
+
+
+
+/* 顶部样式和整体背景 */
+.topText {
     height: 40px;
-    border-radius: 20px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    box-sizing: content-box;
+    padding-left: 10px;
 }
 
+.allBox {
+    width: 100vw;
+    height: 100vh;
+    background: #eee;
+}
+
+
+/* 微聊 */
 .bgTalk {
     background: #eee;
     width: 100vw;
@@ -224,6 +280,8 @@
     margin-top: 50px;
     height: calc(100vh - 100px);
     overflow: auto;
+
+
 }
 
 
@@ -350,7 +408,11 @@
     height: 30px;
 }
 
-.flexBtn {}
+.flexBtn {
+    display: flex;
+    margin-top: -12px;
+    justify-content: space-between;
+}
 
 .li {
     list-style: none;

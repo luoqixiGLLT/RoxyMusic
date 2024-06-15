@@ -22,9 +22,9 @@ export default function Four() {
     let [newsData, setnewData] = useState([])
     let userId = JSON.parse(localStorage.getItem("user")).id
     let getData = () => {
-        http.get(`/getTalk2`).then(res => {
+        http.get(`getTalk2`).then(res => {
             setnewData(res.data.data)
-            console.log(res)
+            console.log(res,111)
         })
     }
     useEffect(() => {

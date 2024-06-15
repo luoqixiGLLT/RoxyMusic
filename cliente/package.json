@@ -12,6 +12,8 @@
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
     "@nutui/nutui-react": "^2.6.9",
+    "anime": "^0.1.2",
+    "animejs": "^3.2.2",
     "antd": "^5.18.0",
     "antd-mobile": "^5.36.1",
     "antd-mobile-icons": "^0.3.0",

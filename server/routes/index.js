@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Music, Playlist } = require('../models/index');
 const { User } = require("../models");
-const { Artist } = require("../models/index.js");
+const { Artist, userDB, newsDB, fzDB } = require("../models/index.js");
 
 /* GET home page. */
 router.get('/', (req, res) => {
@@ -109,6 +109,12 @@ router.get("/userText", async (req, res) => {
     })
 })
 
+router.get("/getFz", async (req, res) => {
+    data = await fzDB.find()
+    res.send({
+        data
+    })
+})
 //添加消息
 router.post("/addNews", async (req, res) => {
     let data = req.body
