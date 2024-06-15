@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import './sou.css'
+import { useNavigate } from 'react-router-dom'
 import { SearchOutlined } from '@ant-design/icons'
 export default function sou() {
+   const navigator = useNavigate()
+      const onto = ()=>{
+          navigator('/home')
+      }
   const list = [
     { name: '若月亮还没来', new: 0, hot: 1 },
     { name: '如果爱忘了', new: 0, hot: 0 },
@@ -43,7 +48,7 @@ export default function sou() {
         <div className='Search_box1'>
           <SearchOutlined className='Search_sou' /><input placeholder='若月亮没来' value={name} onChange={(e) => { setName(e.target.value) }} onKeyDown={en} className='Search_input'></input>
         </div>
-        <button className='Search_but'>取消</button>
+        <button className='Search_but' onClick={onto}>取消</button>
       </div>
       <div>
         {lists.map(item => {

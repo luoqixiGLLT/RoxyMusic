@@ -16,6 +16,9 @@ export default function Search() {
     {name:'表白',new:0,hot:0},
   ]
   const navigator = useNavigate()
+     const onto = ()=>{
+         navigator('/home')
+     }
   const [history,setHistory] = useState([])
   const [name,setName] = useState('')
   const en=(e)=>{
@@ -36,7 +39,7 @@ export default function Search() {
         <div className='Search_box1'>
           <SearchOutlined className='Search_sou' /><input placeholder='若月亮没来' value={name} onChange={(e)=>{setName(e.target.value)}} onKeyDown={en} className='Search_input'></input>
         </div>
-        <button className='Search_but'>取消</button>
+        <button className='Search_but' onClick={onto}>取消</button>
       </div>
       <div className='Search_box4'>
         <div className='Search_box4_1'>
