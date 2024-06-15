@@ -5,6 +5,9 @@ import "./User.css"
 import { Outlet, useNavigate } from 'react-router-dom';
 const User = () => {
     const nai = useNavigate()
+    const onto=()=>{
+        nai('/zhu')
+    }
     return (
         <div className='User'>
             <div className='User_body'>
@@ -19,7 +22,7 @@ const User = () => {
                         <p className='User_p'>小音波1ETL7CX</p>
                     </div>
                     <div className='User_left' >
-                        <RightOutline />
+                        <RightOutline onClick={onto} />
                     </div>
                 </div>
                 <div className='User_cente'>

@@ -7,6 +7,7 @@ import Search from "./Search.jsx";
 import Play from "./Index/Play.jsx";
 //我的子路由
 import User from "./Index/User.jsx";
+import Zhu from "./Index/zhu.jsx";
 import Music from "./Index/User/Music.jsx";
 import Friends from "./Index/User/Friends.jsx";
 import Brother from "./Index/User/Brother.jsx";
@@ -14,6 +15,7 @@ import Talks from "./Index/User/Talks.jsx";
 import Author from "./Index/User/Author.jsx";
 import Like from "./Index/User/Like.jsx";
 import Trends from "./Index/User/Trends.jsx";
+import Bian from "./Index/bian.jsx";
 //首页子路由
 import Home from "./Index/Home.jsx";
 import Dan from "./Index/Home/Dan.jsx";
@@ -42,6 +44,8 @@ function App() {
                             <Route path="/home/Tui" element={<Tui />} />,
                         </Route>
                         <Route path='play' element={<Play />} />
+                            <Route path="zhu" element={<Zhu />} />
+                            <Route path="bian" element={<Bian />} />
                         <Route path='user' element={<User />}  >
                             <Route path="/user/Music" element={<Music />} />,
                             <Route path="/user/Friends" element={<Friends />}>
