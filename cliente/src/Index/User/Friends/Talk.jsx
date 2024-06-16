@@ -111,155 +111,7 @@ export default function Talk() {
         // });
     }, [fz])
 
-    let [wsSocket, setSock] = useState(null);
-    let [called, setCalled] = useState(false);
-    let [caller, setCaller] = useState(false);
-    let [calling, setCalling] = useState(false);
-    let [Communicating, setCommunicating] = useState(false);
-    let localVideoRef = useRef(null);
-    let remoteVideoRef = useRef(null);
-    let [peer, setPeer] = useState(null);
-    let [RemoteVideo, setRemoteVideo] = useState(null);
-    let [localStream, setLocalStream] = useState(null);
-    let roomId = "005";
-    const callRemote = async () => {
-        console.log("发起视频");
-        setCaller(true);
-        setCalling(true);
-        await getLocalStream();
-        wsSocket.emit("callRemote", roomId);
-    };
-    const acceptCall = () => {
-        // 用户B收到用户A的请求
-        setCaller(true)
-        console.log("同意视频邀请");
-        wsSocket.emit("acceptCall", roomId);
-
-    };
-
-    const hangUp = () => {
-        wsSocket.emit("hangUp", roomId);
-        reset();
-    };
-
-    const reset = () => {
-        setCalled(false);
-        setCaller(false);
-        setCalling(false);
-        setCommunicating(false);
-        setPeer(null);
-        localVideoRef.current.srcObject = null;
-        remoteVideoRef.current.srcObject = null;
-        setLocalStream(null);
-        console.log("挂断结束视频-------");
-    };
-
-    const getLocalStream = async () => {
-        let obj = { audio: true, video: true };
-        const stream = await navigator.mediaDevices.getUserMedia(obj);
-        localVideoRef.current.srcObject = stream;
-        localVideoRef.current.play();
-        setLocalStream(stream);
-        return stream;
-    };
-
-    useEffect(() => {
-        const initializeSocket = () => {
-            const socket = io("http://localhost:3000"); // 对应服务的端口
-            setSock(socket);
-            console.log(socket);
-            socket.on("connectionSuccess", () => {
-                console.log("连接成功:");
-            });
-            socket.emit("joinRoom", roomId); // 前端发送加入房间事件
-            socket.on("callRemote", () => {
-                if (!caller) {
-                    setCalled(true); // 接听方
-                    setCalling(true); // 视频通话中
-                }
-            });
-            socket.on("acceptCall", async () => {
-                if (caller) {
-                    // 用户A收到用户B同意视频的请求
-                    peer = new RTCPeerConnection()
-                    console.log(localStream);
-                    console.log(typeof localStream);
-                    // 添加本地音视频流
-                    if (peer.addStream) {
-                        peer.addStream(localStream);
-                    } else {
-                        console.error('RTCPeerConnection does not support addStream method.');
-                    }
-                    peer.onicecandidate = (event) => {
-                        if (event.candidate) {
-                            console.log("用户A获取candidate信息", event.candidate);
-                            socket.emit("sendCandidate", { roomId, candidate: event.candidate });
-                        }
-                    };
-                    peer.onaddstream = (event) => {
-                        console.log("用户A收到用户B的stream", event.stream);
-                        setCalling(false);
-                        setCommunicating(true);
-                        setRemoteVideo(event.stream);
-                    };
-                    const offer = await peer.createOffer({
-                        offerToReceiveAudio: 1,
-                        offerToReceiveVideo: 1,
-                    });
-                    console.log("offer", offer);
-                    await peer.setLocalDescription(offer);
-                    socket.emit("sendOffer", { offer, roomId });
-                }
-            });
-
-            // 收到offer
-            socket.on("sendOffer", async (offer) => {
-                if (called) {
-                    console.log("收到offer", offer);
-                    const peer = new RTCPeerConnection();
-                    const stream = await getLocalStream();
-                    peer.addStream && peer.addStream(stream);
-                    peer.onicecandidate = (event) => {
-                        if (event.candidate) {
-                            console.log("用户B获取candidate信息", event.candidate);
-                            socket.emit("sendCandidate", { roomId, candidate: event.candidate });
-                        }
-                    };
-                    peer.onaddstream = (event) => {
-                        console.log("用户B收到用户A的stream", event.stream);
-                        setCalling(false);
-                        setCommunicating(true);
-                        setRemoteVideo(event.stream);
-                    };
-                    await peer.setRemoteDescription(offer);
-                    const answer = await peer.createAnswer();
-                    console.log("用户B生成answer", answer);
-                    await peer.setLocalDescription(answer);
-                    socket.emit("sendAnswer", { answer, roomId });
-                }
-            });
-            // 用户A收到answer
-            socket.on("sendAnswer", async (answer) => {
-                if (caller) {
-                    await peer.setRemoteDescription(answer);
-                }
-            });
-            // 收到candidate信息
-            socket.on("sendCandidate", async (candidate) => {
-                console.log("收到candidate信息", candidate);
-                await peer.addIceCandidate(candidate);
-            });
-            // 挂断
-            socket.on("hangUp", () => {
-                reset();
-            });
-        };
-
-        initializeSocket();
-
-
-    }, [caller]);
-    const [visible, setVisible] = useState(false)
+ 
     return (
         <div className='bgTalk'>
             <div className='Talktop'>
@@ -327,11 +179,8 @@ export default function Talk() {
                             addMassage()
                         }
                     }} onChange={(e) => { setContent(e.target.value) }} />
-<<<<<<< Updated upstream
-                    <Button color='warning' size="small" onClick={() => { addMassage() }}>发送</Button>
-=======
                     <Button color='warning' size="small" className='xinde' onClick={() => { addMassage() }}>发送</Button>
->>>>>>> Stashed changes
+
                 </div>
                 <div>
                     <ul className='ul'>
@@ -339,7 +188,7 @@ export default function Talk() {
                         <li className="li"><p><FolderOutline style={{ marginTop: "10px" }} fontSize={28} /></p></li>
                         <li className="li"><p><EnvironmentOutline style={{ marginTop: "10px" }} fontSize={28} /></p></li>
                         <li className="li"><p><PhoneFill style={{ marginTop: "10px" }} onClick={() => {
-                            setVisible(true)
+                          
                         }} fontSize={28} />
                         </p></li>
                     </ul>
@@ -382,78 +231,7 @@ export default function Talk() {
                     </div>
                 </Popup>
             </div>
-            <Popup
-                visible={visible}
-                onMaskClick={() => {
-                    setVisible(false)
-                }}
-                onClose={() => {
-                    setVisible(false)
-                }}
-                bodyStyle={{ height: '100vh' }}
-                position={'top'}
-            >
-                <div>
-                    <NavBar back='返回' backArrow={<CloseOutline />} onBack={() => setVisible(false)}>
-                        通话
-                    </NavBar>
-                </div>
-                <div className="flex items-center flex-col text-center p-12 h-screen">
-                    <div className="relative h-full mb-4 fBox">
-                        <video
-                            id="localVideo"
-                            ref={localVideoRef}
-                            className="w-96 h-full bg-gray-200 mb-4 object-cover"
-                            autoPlay
-                            muted
-                        ></video>
-                        <video
-                            id="remoteVideo"
-                            ref={remoteVideoRef}
-                            className="w-32 h-48 absolute bottom-0 right-0 object-cover"
-                            autoPlay
-                        ></video>
-                        {caller && calling && (
-                            <div className="absolute top-2/3 left-36 flex flex-col items-center">
-                                <p className="mb-4 text-white">等待对方接听...</p>
-                                <img
-                                    onClick={hangUp}
-                                    src="../1.png"
-                                    className="w-16 cursor-pointer"
-                                    alt=""
-                                />
-                            </div>
-                        )}
-                        {called && calling && (
-                            <div className="absolute top-2/3 left-32 flex flex-col items-center">
-                                <p className="mb-4 text-white">收到视频邀请...</p>
-                                <div className="flex">
-                                    <img
-                                        onClick={hangUp}
-                                        src="../../../1.png"
-                                        className="w-16 cursor-pointer mr-4"
-                                        alt=""
-                                    />
-                                    <img
-                                        onClick={acceptCall}
-                                        src="../../../2.png"
-                                        className="w-16 cursor-pointer"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                    <div>
-                        <button onClick={callRemote} style={{ marginRight: '10px' }}>
-                            发起视频
-                        </button>
-                        <button onClick={hangUp} style={{ marginLeft: '10px' }}>
-                            挂断视频
-                        </button>
-                    </div>
-                </div>
-            </Popup >
+    
         </div >
     )
 }
