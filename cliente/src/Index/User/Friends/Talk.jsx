@@ -327,7 +327,11 @@ export default function Talk() {
                             addMassage()
                         }
                     }} onChange={(e) => { setContent(e.target.value) }} />
+<<<<<<< Updated upstream
                     <Button color='warning' size="small" onClick={() => { addMassage() }}>发送</Button>
+=======
+                    <Button color='warning' size="small" className='xinde' onClick={() => { addMassage() }}>发送</Button>
+>>>>>>> Stashed changes
                 </div>
                 <div>
                     <ul className='ul'>
