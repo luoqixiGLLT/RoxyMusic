@@ -8,10 +8,10 @@ import { useEffect } from 'react'
 export default function Music() {
     const colors = [
         { type: "img", src: '../首页轮播图/1.png' },
-        { type: "img", src: '../首页轮播图/2.png' },
+        { type: "video", src: '../首页轮播图/下载.mp4' },
         { type: "img", src: '../首页轮播图/3.png' },
         { type: "img", src: '../首页轮播图/4.png' },
-        { type: "video", src: 'https://v3-weba.douyinvod.com/07d6281057145aafb95832b732e61e8d/666bf6a9/video/tos/cn/tos-cn-ve-0026c800/okPFEEh0LAuNb0zpAFQfYhGtINovyThArQAFJA/?a=6383&ch=0&cr=0&dr=0&er=0&lr=default&cd=0%7C0%7C0%7C0&br=1492&bt=1492&cs=0&ds=3&eid=21760&ft=3PhjVQujppftD7LdZsQ.C_fauVq0Ine.RUtc6BDcOTpqTQdHDD2pewqK0y2-ousZ.&mime_type=video_mp4&qs=0&rc=ZzQ7ZWRkZmc5N2dkNTplM0BpM3J4dDg6Zjx0bjMzNGQzM0BjNWBgYi0yXjUxMGIuLTNeYSMvZnFhcjRnLTFgLS1kLi9zcw%3D%3D&btag=80000e00010000&cquery=100e&dy_q=1718347901&feature_id=1229c61d4e863560fb994c11be849377&l=20240614145141CA303E0A545D17177BFA' },
+        { type: "video", src: '../首页轮播图/下载.mp4' },
 
     ]
     // 弹框

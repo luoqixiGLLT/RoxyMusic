@@ -25,9 +25,8 @@ const Home = () => {
                     </Tabs.Tab>
                     
             </Tabs>
-            <img src='../3.png' style={{width:'10%',height:'10%'}} onClick={()=>{navigate('/fenlei')}}></img>
             </div>
-            
+            <div></div>
             <Outlet></Outlet>
             
         </div>
