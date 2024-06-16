@@ -30,7 +30,7 @@ export default function Music() {
             cover:'',
 
         }
-        const res = await http.post('add_playlist',Musiclist)
+        const res = await http.post('add_playlist',from)
         console.log(res.data);
     }
    
