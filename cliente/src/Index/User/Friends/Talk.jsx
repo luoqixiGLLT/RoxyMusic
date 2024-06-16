@@ -176,7 +176,7 @@ export default function Talk() {
                             addMassage()
                         }
                     }} onChange={(e) => { setContent(e.target.value) }} />
-                    <Button color='warning' size="small" onClick={() => { addMassage() }}>发送</Button>
+                    <Button className='buttons' color='warning' size="small" onClick={() => { addMassage() }}>发送</Button>
                 </div>
                 <div>
                     <ul className='ul'>
