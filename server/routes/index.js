@@ -1,14 +1,63 @@
 const express = require('express');
 const router = express.Router();
+const socket = require('socket.io');
+const http = require('http');
 const { Music, Playlist } = require('../models/index');
 const { User } = require("../models");
 const { Artist, userDB, newsDB, fzDB } = require("../models/index.js");
-
+const server = http.createServer()
 /* GET home page. */
 router.get('/', (req, res) => {
     res.render('index', { title: 'Express' });
 });
+const io = socket(server, {
+    cors: {
+        origin: '*' // 配置跨域
+    }
+});
+io.on('connection', sock => {
+    console.log('连接成功...')
+    // 向客户端发送连接成功的消息
+    sock.emit('connectionSuccess');
+    sock.on('joinRoom', (roomId) => {
+        sock.join(roomId);
+        console.log('joinRoom-房间ID：' + roomId);
+    })
 
+    // 广播有人加入到房间
+    sock.on('callRemote', (roomId) => {
+        io.to(roomId).emit('callRemote')
+    })
+
+    // 广播同意接听视频
+    sock.on('acceptCall', (roomId) => {
+        io.to(roomId).emit('acceptCall')
+        console.log(roomId);
+    })
+
+    // 接收offer
+    sock.on('sendOffer', ({ offer, roomId }) => {
+        io.to(roomId).emit('sendOffer', offer)
+    })
+
+    // 接收answer
+    sock.on('sendAnswer', ({ answer, roomId }) => {
+        io.to(roomId).emit('sendAnswer', answer)
+    })
+
+    // 收到candidate
+    sock.on('sendCandidate', ({ candidate, roomId }) => {
+        io.to(roomId).emit('sendCandidate', candidate)
+    })
+
+    // 挂断结束视频
+    sock.on('hangUp', (roomId) => {
+        io.to(roomId).emit('hangUp')
+    })
+})
+server.listen(3000, () => {
+    console.log('服务器启动成功');
+});
 router.get('/music', async (req, res) => {
     try {
         const { page = 1, pageSize = 10, language, artist } = req.query;
