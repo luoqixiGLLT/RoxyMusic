@@ -49,3 +49,24 @@
     -webkit-text-fill-color: transparent;
     margin-top: 4%;
 }
+.zhu_div1{
+    display: flex;
+    margin: 20px;
+    line-height: 40px;
+}
+.zhu_div1 img{
+    width: 70px;
+    height: 70px;
+}
+.zhu_div1 h1{
+    font-size: 20px;
+    margin-left: 10px;
+}
+.zhu_div1 p{
+    font-size: 15px;
+    color:rgb(96, 98, 102);
+    margin-left: 10px;
+}
+.zhu_div{
+    margin-top: 50px;
+}

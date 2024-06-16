@@ -17,6 +17,12 @@ import Like from "./Index/User/Like.jsx";
 import Trends from "./Index/User/Trends.jsx";
 import Bian from "./Index/bian.jsx";
 import Sou from "./Index/sou.jsx";
+import Sign from "./Index/Sign.jsx";
+
+import Arr from "./Index/Sou/arr.jsx";
+import Qu from "./Index/Sou/dan.jsx";
+import Shou from "./Index/Sou/shou.jsx";
+import Zong from "./Index/Sou/zong.jsx";
 //首页子路由
 import Home from "./Index/Home.jsx";
 import Dan from "./Index/Home/Dan.jsx";
@@ -47,7 +53,12 @@ function App() {
                         <Route path='play' element={<Play />} />
                             <Route path="zhu" element={<Zhu />} />
                             <Route path="bian" element={<Bian />} />
-                            <Route path="sou" element={<Sou />} />
+                            <Route path="sou" element={<Sou />} >
+                                <Route path="/sou/arr" element={<Arr />} />
+                                <Route path="/sou/zong" element={<Zong />} />
+                                <Route path="/sou/shou" element={<Shou />} />
+                                <Route path="/sou/dan" element={<Qu />} />
+                            </Route>
                         <Route path='user' element={<User />}  >
                             <Route path="/user/Music" element={<Music />} />,
                             <Route path="/user/Friends" element={<Friends />}>
@@ -67,6 +78,7 @@ function App() {
                     <Route path='/search' element={<Search />} />
                     <Route path='/fenlei' element={<Fenlei />} />
                     <Route path='/talk/:username' element={<Talk />} />
+                    <Route path='/sign/:username' element={<Sign />} />
                 </Routes >
             </BrowserRouter >
         </Fragment >

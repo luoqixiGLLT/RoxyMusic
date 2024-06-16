@@ -214,6 +214,20 @@
     width: calc(100vw - 100px)
 }
 
+.ss p {
+    margin-left: 10px;
+    color: black;
+}
+.sign_img{
+    width: 100px;
+   margin: 0 auto;
+}
+.userbnt {
+    width: 60px;
+    background: orange;
+    border-radius: 10px;
+}
+
 .titleText {
     font-size: 16px;
     color: #575656
