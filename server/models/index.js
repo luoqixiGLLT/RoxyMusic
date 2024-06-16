@@ -93,6 +93,7 @@ const userSchema = new mongoose.Schema({
     },
     avatar: {
         type: String,
+        default: 'http://localhost:3001/avatar.jpg'
     },
     likes: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -112,22 +113,10 @@ const playlistSchema = new mongoose.Schema({
         type: String,
         default: '对歌单进行描述'
     },
-    cover: {
-        type: String,
-        required: true
-    },
     musics: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Music'
     }],
-    creator: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    },
-    type: {
-        type: String,
-        default: ''
-    }
 })
 const language = new mongoose.Schema({
     name: {
@@ -171,7 +160,6 @@ let FzSchema = new mongoose.Schema({
     delivery: String,
     shopName: String,
 })
-
 let fzDB = mongoose.model("fz", FzSchema, "fz")
 // export {
 //     Music,

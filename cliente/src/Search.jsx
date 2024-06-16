@@ -16,7 +16,10 @@ export default function Search() {
     {name:'表白',new:0,hot:0},
   ]
   const navigator = useNavigate()
-  const [history,setHistory] = useState([])
+     const onto = ()=>{
+         navigator('/home')
+     }
+  const [history,setHistory] = useState(JSON.parse(localStorage.getItem('history')))
   const [name,setName] = useState('')
   const en=(e)=>{
     if(e.keyCode===13){
@@ -24,11 +27,16 @@ export default function Search() {
       let historys = [...history]
       historys.push(name)
       setHistory(historys)
+      localStorage.setItem('history',JSON.stringify(historys))
       navigator('/sou')
       localStorage.setItem('name',JSON.stringify(name))
       console.log(historys);
     }
 
+  }
+  const his=(item)=>{
+    localStorage.setItem('name',JSON.stringify(item))
+    navigator('/sou/dan')
   }
   return (
     <div className='Search_box'>
@@ -36,7 +44,7 @@ export default function Search() {
         <div className='Search_box1'>
           <SearchOutlined className='Search_sou' /><input placeholder='若月亮没来' value={name} onChange={(e)=>{setName(e.target.value)}} onKeyDown={en} className='Search_input'></input>
         </div>
-        <button className='Search_but'>取消</button>
+        <button className='Search_but' onClick={onto}>取消</button>
       </div>
       <div className='Search_box4'>
         <div className='Search_box4_1'>
@@ -59,7 +67,7 @@ export default function Search() {
         </div>
         <div>
           {history.map(item=>{
-            return <button className='Search_box5_but'>{item}</button>
+            return <button onClick={()=>{his(item)}} className='Search_box5_but'>{item}</button>
           })}
         </div>
       </div>
@@ -71,7 +79,7 @@ export default function Search() {
         <div className='Search_box5_2'>
           {list.map(item=>{
             return <div className='Search_box5_3'>
-              <button className='Search_box5_but'>{item.hot===1?'🔥':''}{item.new===1?'🆕':''} {item.name}</button>
+              <button className='Search_box5_but' onClick={()=>{his(item.name) }}>{item.hot===1?'🔥':''}{item.new===1?'🆕':''} {item.name}</button>
             </div>
             
           })}
