@@ -9,6 +9,14 @@
 .dan_box{
     margin-top: 10px;
 }
+.zi_but{
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(151, 146, 146);
+    margin-top: 10px;
+    margin-left: 10px;
+}
 .dan_name{
     font-size: 20px;
 }

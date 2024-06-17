@@ -103,6 +103,7 @@ export default function bian() {
             <RightOutline className='bian_right' />
           </div>
         </div>
+        <button className='zi_but'>保存</button>
       </div>
     </div>
   )
