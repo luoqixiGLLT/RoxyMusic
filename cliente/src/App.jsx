@@ -26,6 +26,7 @@ import Arr from "./Index/Sou/arr.jsx";
 import Qu from "./Index/Sou/dan.jsx";
 import Shou from "./Index/Sou/shou.jsx";
 import Zong from "./Index/Sou/zong.jsx";
+import Zi from "./Index/zi.jsx";
 // >>>>>>> 824b86ac14af0e75f3ebf3b344a9c550ce4b8824
 //首页子路由
 import Home from "./Index/Home.jsx";
@@ -57,6 +58,7 @@ function App() {
                         <Route path='play' element={<Play />} />
                             <Route path="zhu" element={<Zhu />} />
                             <Route path="bian" element={<Bian />} />
+                            <Route path="zi" element={<Zi />} />
                             <Route path="sou" element={<Sou />} >
                                 <Route path="/sou/arr" element={<Arr />} />
                                 <Route path="/sou/zong" element={<Zong />} />

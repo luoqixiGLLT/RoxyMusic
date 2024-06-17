@@ -6,7 +6,39 @@
     padding-left: 25px;
     padding-top: 55px;
 }
-
+.dan_box{
+    margin-top: 10px;
+}
+.dan_name{
+    font-size: 20px;
+}
+.dan_but{
+    position: relative;
+    top:-30px;
+    border-radius: 50px;
+    left:300px;
+    background-color: gray;
+    width: 50px;
+    height: 30px;
+}
+.dan_a{
+    color: rgb(151, 146, 146);
+}
+.zi_inp{
+    border: none;
+    outline: none;
+    background-color: rgb(4,12,13);
+}
+.zi_inp1{
+    border: none;
+    outline: none;
+    background-color: rgb(13,37,40);
+}
+.zi_inp2{
+    border: none;
+    outline: none;
+    background-color: rgb(8,23,25);
+}
 .bian_img {
     width: 60px;
     height: 60px;

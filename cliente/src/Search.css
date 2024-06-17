@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .inp1{
     border-radius: 50px;
     width: 260px;
@@ -16,8 +15,7 @@
 .search{
     height:100vh;
     width:100%;
-    background-color: rgb(17,19,23);
-=======
+    background-color: rgb(17,19,23);}
 .Search_box{
     background: linear-gradient(0deg, #163F44, black);
     color: white;
@@ -111,6 +109,4 @@
     background-color: rgb(60, 58, 58);
     border-radius: 50px;
     outline: none;
-
->>>>>>> 824b86ac14af0e75f3ebf3b344a9c550ce4b8824
 }
