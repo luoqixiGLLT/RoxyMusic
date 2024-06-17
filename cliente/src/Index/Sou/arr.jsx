@@ -6,6 +6,7 @@ import { SearchOutlined } from '@ant-design/icons'
 export default function dan() {
   const list = [
     { name: '若月亮还没来', new: 0, hot: 1, a: '张三' },
+    { name: '月亮之上', new: 0, hot: 1, a: '张三' },
     { name: '如果爱忘了', new: 0, hot: 0, a: '李四' },
     { name: '承诺', new: 0, hot: 0, a: '王五' },
     { name: '原来', new: 0, hot: 1, a: '赵六' },
@@ -23,14 +24,14 @@ export default function dan() {
     let namess = JSON.parse(names)
     list.forEach(item => {
       if (item.name.includes(namess)) {
-        arr.splice(0, 1, item)
+        arr.push(item)
       }
     })
     setLists(arr)
   }
   useEffect(() => {
     getlists()
-  }, [name])
+  }, [])
   return (
     <div>
       <div>
